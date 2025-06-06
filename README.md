@@ -47,7 +47,7 @@ console.log(obj.foo["foo.baz"]);
 
 ## API
 
-### deep(object, path[, value], strict)
+### deep(object, path[, value])
 
 Where `path` is a dot-notation string `foo.bar` or an array of strings.
 
