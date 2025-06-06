@@ -1,5 +1,5 @@
 {
-  "name": "@asplnk/deep-get-set-ts",
+  "name": "deep-get-set-ts",
   "version": "0.0.1",
   "description": "Deeply get and set values via dot-notation strings respecting type information.",
   "keywords": [
