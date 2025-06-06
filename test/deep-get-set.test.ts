@@ -1,7 +1,14 @@
 import { describe, expect, it } from "vitest";
-import { deep, get, set } from "../src";
+
+import deep, { get, set } from '../src';
 
 describe("deep-get-set", () => {
+  it("default export", () => {
+    const obj: Record<string, any> = {};
+    expect(deep(obj, "foo.bar", "baz")).toBe("baz");
+    expect(obj.foo.bar, "baz");
+    expect(deep(obj, "foo.bar")).toBe("baz");
+  });
   it("deep gets", () => {
     const obj = {
       foo: "bar",
@@ -48,7 +55,7 @@ describe("deep-get-set", () => {
   });
   it("deep sets, strict", () => {
     const obj: Record<string, any> = {};
-    expect(set(obj, "yep.nope", "p", true)).toBe("p");
+    expect(() => set(obj, "yep.nope", "p", true)).toThrowError();
   });
   it("deep sets with array of paths", () => {
     const obj = {

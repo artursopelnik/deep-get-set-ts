@@ -1,4 +1,4 @@
-import { deep } from "./src";
+import deep from "./src";
 
 const obj = {
   foo: {
