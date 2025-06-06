@@ -1,0 +1,72 @@
+{
+  "name": "@asplnk/deep-get-set-ts",
+  "version": "0.0.1",
+  "description": "Deeply get and set values via dot-notation strings respecting type information.",
+  "keywords": [
+    "deep-get-set",
+    "deep get set",
+    "deepgetset",
+    "get-set",
+    "deep",
+    "ts",
+    "typescript",
+    "typescript deep get set",
+    "typescript-deep-get-set"
+  ],
+  "homepage": "https://github.com/artursopelnik/deep-get-set-ts#readme",
+  "bugs": {
+    "url": "https://github.com/artursopelnik/deep-get-set-ts/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artursopelnik/deep-get-set-ts.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Artur Sopelnik",
+    "email": "artur.sopelnik93@gmail.com"
+  },
+  "type": "module",
+  "exports": {
+    "types": {
+      "import": "./dist/index.d.mts",
+      "require": "./dist/index.d.cts"
+    },
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.cjs"
+  },
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.cts",
+  "files": [
+    "dist/",
+    "package.json",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "example": "tsx example.ts",
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
+    "format": "prettier --write .",
+    "lint": "tsc --noEmit && eslint src --fix",
+    "update": "npx npm-check-updates -u"
+  },
+  "peerDependencies": {
+    "@types/node": "^22.9.3",
+    "npm-check-updates": "^18.0.1",
+    "tsx": "^4.19.4"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.28.0",
+    "eslint": "^9.28.0",
+    "prettier": "^3.5.3",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.33.1",
+    "vite": "^6.3.5",
+    "vite-plugin-dts": "^4.5.4",
+    "vitest": "^3.2.2"
+  }
+}
