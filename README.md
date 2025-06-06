@@ -17,7 +17,7 @@
 ## 📌 Example
 
 ```js
-import { deep } from "deep-get-set-ts";
+import deep from "deep-get-set-ts";
 
 const obj = {
   foo: {
@@ -52,7 +52,7 @@ console.log(obj.foo["foo.baz"]);
 Where `path` is a dot-notation string `foo.bar` or an array of strings.
 
 - If `value` is passed it will be set on the path.
-- Set `strict = true` if you want non-existent paths to be initialized.
+- Set `deep.p` = true if you want non-existent paths to be initialized.
 - If you want to unset (or delete), pass `undefined` as the `value`.
 
 ## Installation

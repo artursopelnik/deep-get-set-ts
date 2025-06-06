@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import deep, { get, set } from '../src';
+import deep, { get, set } from "../src";
 
 describe("deep-get-set", () => {
   it("default export", () => {

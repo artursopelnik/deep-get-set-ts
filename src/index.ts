@@ -2,15 +2,11 @@
  * Deeply get or set values using dot-notation strings with full type safety.
  */
 
-export default function <T extends Record<string, unknown>>(
-    obj: T,
-    path: string | string[],
-    value?: unknown,
-    strict?: boolean,
-): unknown {
-    return arguments.length === 2
-        ? get(obj, path)
-        : set(obj, path, value, strict);
+export default function deep (...args: Parameters<typeof get> | Parameters<typeof set>) {
+    if (args.length === 2) {
+        return get(...(args as Parameters<typeof get>));
+    }
+    return set(...(args as Parameters<typeof set>));
 }
 
 export function get(
@@ -36,7 +32,7 @@ export function get(
     return obj;
 }
 
-export function set (
+export function set(
     obj: Record<string, unknown>,
     path: string | (string | string[])[],
     value: unknown,
@@ -56,7 +52,6 @@ export function set (
     obj[lastKey] = value;
     return value;
 }
-
 
 /**
  * Checks if a key is unsafe to use in object property access.
