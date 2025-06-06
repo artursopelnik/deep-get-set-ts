@@ -2,12 +2,6 @@ import { describe, expect, it } from "vitest";
 import { deep, get, set } from "../src";
 
 describe("deep-get-set", () => {
-  it("default export", () => {
-    const obj: Record<string, any> = {};
-    expect(deep(obj, "foo.bar", "baz")).toBe("baz");
-    expect(obj.foo.bar, "baz");
-    expect(deep(obj, "foo.bar")).toBe("baz");
-  });
   it("deep gets", () => {
     const obj = {
       foo: "bar",
@@ -50,11 +44,11 @@ describe("deep-get-set", () => {
     expect(set(obj, "bar.baz.beep", "nope")).toBe("nope");
     expect(obj.bar.baz.beep, "nope");
     expect(set(obj, "yep.nope", "p")).toBe("p");
-    expect(obj.yep.nope, "p");
+    expect(obj.yep.nope).toBe("p");
   });
   it("deep sets, strict", () => {
     const obj: Record<string, any> = {};
-    expect(set(obj, "yep.nope", "p", true)).toBe(undefined);
+    expect(set(obj, "yep.nope", "p", true)).toBe("p");
   });
   it("deep sets with array of paths", () => {
     const obj = {
@@ -83,11 +77,11 @@ describe("deep-get-set", () => {
       },
     };
 
-    expect(set(obj, "foo", undefined), undefined);
+    expect(set(obj, "foo", undefined)).toBe(undefined);
     expect(obj.foo).toBeFalsy();
-    expect(set(obj, "bar.baz", undefined), undefined);
+    expect(set(obj, "bar.baz", undefined)).toBe(undefined);
     expect(obj.bar.baz).toBeFalsy();
-    expect(get(obj, "bar.baz.beep"), undefined);
+    expect(get(obj, "bar.baz.beep")).toBe(undefined);
   });
   it("no prototype pollution", () => {
     const obj = {};

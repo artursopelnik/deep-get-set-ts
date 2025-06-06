@@ -1,6 +1,6 @@
 {
   "name": "deep-get-set-ts",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Deeply get and set values via dot-notation strings respecting type information.",
   "keywords": [
     "deep-get-set",
@@ -40,6 +40,7 @@
   "files": [
     "dist/",
     "package.json",
+    "example.ts",
     "LICENSE",
     "README.md"
   ],

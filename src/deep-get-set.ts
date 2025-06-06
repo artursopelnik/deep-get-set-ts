@@ -53,7 +53,7 @@ export function set(
       typeof obj[key] !== "object" ||
       obj[key] === null
     ) {
-      if (strict) return;
+      if (!Object.hasOwn(obj, key) && !strict) obj[key] = {};
       obj[key] = {};
     }
     obj = obj[key] as Record<string, unknown>;
