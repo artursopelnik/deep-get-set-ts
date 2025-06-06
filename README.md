@@ -73,22 +73,6 @@ yarn add deep-get-set-ts
 bun add deep-get-set-ts
 ```
 
-### npm
-
-```sh
-# Install with npm
-npm install deep-get-set-ts
-
-# Install with pnpm
-pnpm add deep-get-set-ts
-
-# Install with yarn
-yarn add deep-get-set-ts
-
-# Install with bun
-bun add deep-get-set-ts
-```
-
 ## Note
 
 There's a dozen modules like this on [npm](https://npmjs.org).
